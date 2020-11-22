@@ -29,7 +29,7 @@ public class GoodsInfo {
 
     // 声明一个手机商品的名称数组
     private static String[] mNameArray = {
-            "iPhone 12", "HUAWEI P40 Pro", "小米10 至尊纪念版", "OPPO Find X2", "vivo X50", "魅族17 Pro","Redmi 10X","Redmi K30"
+            "iPhone 12", "HUAWEI P40 Pro", "小米10 至尊纪念版", "OPPO Find X2", "vivo X50", "魅族17 Pro", "Redmi 10X", "Redmi K30",
     };
     // 声明一个手机商品的描述数组
     private static String[] mDescArray = {
@@ -48,11 +48,11 @@ public class GoodsInfo {
     private static int[] mThumbArray = {
             R.drawable.iphone_s, R.drawable.huawei_s, R.drawable.xiaomi_s,
             R.drawable.oppo_s, R.drawable.vivo_s, R.drawable.meizu_s,
-            R.drawable.redim_s,R.drawable.redims_s};
+            R.drawable.redim_s, R.drawable.redims_s};
     // 声明一个手机商品的大图数组
     private static int[] mPicArray = {
             R.drawable.iphone, R.drawable.huawei, R.drawable.xiaomi,
-            R.drawable.oppo, R.drawable.vivo, R.drawable.meizu,R.drawable.redim,R.drawable.redims
+            R.drawable.oppo, R.drawable.vivo, R.drawable.meizu, R.drawable.redim, R.drawable.redims
     };
 
     // 获取默认的手机信息列表
