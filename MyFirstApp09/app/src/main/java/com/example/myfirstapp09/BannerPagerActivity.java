@@ -1,4 +1,4 @@
-package com.example.tenthapplication;
+package com.example.myfirstapp09;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tenthapplication.constant.ImageList;
-import com.example.tenthapplication.util.Utils;
-import com.example.tenthapplication.widget.BannerPager;
+import com.example.myfirstapp09.constant.ImageList;
+import com.example.myfirstapp09.util.Utils;
+import com.example.myfirstapp09.widget.BannerPager;
 
 public class BannerPagerActivity extends AppCompatActivity implements BannerPager.BannerClickListener {
     private static final String TAG = "BannerPagerActivity";

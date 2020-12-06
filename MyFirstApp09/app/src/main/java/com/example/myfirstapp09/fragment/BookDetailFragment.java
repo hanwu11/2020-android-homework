@@ -1,4 +1,4 @@
-package com.example.tenthapplication.fragment;
+package com.example.myfirstapp09.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.tenthapplication.R;
+import com.example.myfirstapp09.R;
 
 public class BookDetailFragment extends Fragment {
     protected View mView; // 声明一个视图对象

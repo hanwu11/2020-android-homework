@@ -1,4 +1,4 @@
-package com.example.tenthapplication.util;
+package com.example.myfirstapp09.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

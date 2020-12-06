@@ -1,4 +1,4 @@
-package com.example.tenthapplication.widget;
+package com.example.myfirstapp09.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,8 +9,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.LinearLayout;
 
-import com.example.tenthapplication.R;
-import com.example.tenthapplication.util.Utils;
+import com.example.myfirstapp09.R;
+import com.example.myfirstapp09.util.Utils;
 
 public class PagerIndicator extends LinearLayout {
     private static final String TAG = "PagerIndicator";

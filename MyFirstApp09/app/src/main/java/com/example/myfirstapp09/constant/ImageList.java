@@ -1,6 +1,6 @@
-package com.example.tenthapplication.constant;
+package com.example.myfirstapp09.constant;
 
-import com.example.tenthapplication.R;
+import com.example.myfirstapp09.R;
 
 import java.util.ArrayList;
 

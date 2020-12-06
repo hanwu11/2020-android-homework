@@ -1,11 +1,11 @@
-package com.example.tenthapplication.adapter;
+package com.example.myfirstapp09.adapter;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.tenthapplication.fragment.BookCoverFragment;
-import com.example.tenthapplication.fragment.BookDetailFragment;
+import com.example.myfirstapp09.fragment.BookCoverFragment;
+import com.example.myfirstapp09.fragment.BookDetailFragment;
 
 import java.util.ArrayList;
 

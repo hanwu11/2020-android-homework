@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tenthapplication"
+    package="com.example.myfirstapp09"
     android:installLocation="auto">
 
     <application
@@ -12,19 +12,19 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.example.tenthapplication.BannerPagerActivity"
+            android:name="com.example.myfirstapp09.BannerPagerActivity"
             android:exported="true"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name="com.example.tenthapplication.TabFragmentActivity"
+            android:name="com.example.myfirstapp09.TabFragmentActivity"
             android:exported="true"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name="com.example.tenthapplication.TabLayoutActivity"
+            android:name="com.example.myfirstapp09.TabLayoutActivity"
             android:exported="true"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name="com.example.tenthapplication.SearchResultActvity"
+            android:name="com.example.myfirstapp09.SearchResultActvity"
             android:theme="@style/AppCompatTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -35,16 +35,16 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name="com.example.tenthapplication.SearchViewActivity"
+            android:name="com.example.myfirstapp09.SearchViewActivity"
             android:exported="true"
             android:theme="@style/AppCompatTheme" />
 
 
-        <activity android:name="com.example.tenthapplication.TabFirstActivity"/>
-        <activity android:name="com.example.tenthapplication.TabSecondActivity" />
-        <activity android:name="com.example.tenthapplication.TabThirdActivity"/>
+        <activity android:name="com.example.myfirstapp09.TabFirstActivity"/>
+        <activity android:name="com.example.myfirstapp09.TabSecondActivity" />
+        <activity android:name="com.example.myfirstapp09.TabThirdActivity"/>
 
-        <activity android:name="com.example.tenthapplication.MainActivity">
+        <activity android:name="com.example.myfirstapp09.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

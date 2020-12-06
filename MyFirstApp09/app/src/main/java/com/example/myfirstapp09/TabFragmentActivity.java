@@ -1,48 +1,86 @@
-package com.example.tenthapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
+package com.example.myfirstapp09;
 
 import android.annotation.SuppressLint;
-import android.os.Bundle;
-
-import com.example.tenthapplication.util.DateUtil;
-import com.example.tenthapplication.util.MenuUtil;
-
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
-public class SearchViewActivity extends AppCompatActivity {
-    private final static String TAG = "SearchViewActivity";
-    private TextView tv_desc;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTabHost;
+
+import com.example.myfirstapp09.fragment.TabFirstFragment;
+import com.example.myfirstapp09.fragment.TabSecondFragment;
+import com.example.myfirstapp09.fragment.TabThirdFragment;
+import com.example.myfirstapp09.util.MenuUtil;
+
+public class TabFragmentActivity extends AppCompatActivity {
+    private static final String TAG = "TabFragmentActivity";
+    private FragmentTabHost tabHost; // 声明一个碎片标签栏对象
     private SearchView.SearchAutoComplete sac_key; // 声明一个搜索自动完成的编辑框对象
     private String[] hintArray = {"iphone", "iphone8", "iphone8 plus", "iphone7", "iphone7 plus"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_view);
+        setContentView(R.layout.activity_tab_fragment);
 
+        Bundle bundle = new Bundle(); // 创建一个包裹对象
+        bundle.putString("tag", TAG); // 往包裹中存入名叫tag的标记
+        // 从布局文件中获取名叫tabhost的碎片标签栏
+        tabHost = findViewById(android.R.id.tabhost);
+        // 把实际的内容框架安装到碎片标签栏
+        tabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
+        // 往标签栏添加第一个标签，其中内容视图展示TabFirstFragment
+        tabHost.addTab(getTabView(R.string.menu_first, R.drawable.tab_first_selector),
+                TabFirstFragment.class, bundle);
+        // 往标签栏添加第二个标签，其中内容视图展示TabSecondFragment
+        tabHost.addTab(getTabView(R.string.menu_second, R.drawable.tab_second_selector),
+                TabSecondFragment.class, bundle);
+        // 往标签栏添加第三个标签，其中内容视图展示TabThirdFragment
+        tabHost.addTab(getTabView(R.string.menu_third, R.drawable.tab_third_selector),
+                TabThirdFragment.class, bundle);
+        // 不显示各标签之间的分隔线
+        tabHost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
         // 从布局文件中获取名叫tl_head的工具栏
         Toolbar tl_head = findViewById(R.id.tl_head);
-        // 设置工具栏的标题文字
-        tl_head.setTitle("搜索框页面");
+        // 设置工具栏左边的导航图标
+        tl_head.setNavigationIcon(R.drawable.ic_back);
         // 使用tl_head替换系统自带的ActionBar
         setSupportActionBar(tl_head);
+    }
 
+    // 根据字符串和图标的资源编号，获得对应的标签规格
+    private TabSpec getTabView(int textId, int imgId) {
+        // 根据资源编号获得字符串对象
+        String text = getResources().getString(textId);
+        // 根据资源编号获得图形对象
+        Drawable drawable = getResources().getDrawable(imgId);
+        // 设置图形的四周边界。这里必须设置图片大小，否则无法显示图标
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+        // 根据布局文件item_tabbar.xml生成标签按钮对象
+        View item_tabbar = getLayoutInflater().inflate(R.layout.item_tabbar, null);
+        TextView tv_item = item_tabbar.findViewById(R.id.tv_item_tabbar);
+        tv_item.setText(text);
+        // 在文字上方显示标签的图标
+        tv_item.setCompoundDrawables(null, drawable, null, null);
+        // 生成并返回该标签按钮对应的标签规格
+        return tabHost.newTabSpec(text).setIndicator(item_tabbar);
     }
 
     // 根据菜单项初始化搜索框
@@ -102,7 +140,7 @@ public class SearchViewActivity extends AppCompatActivity {
             // 设置自动完成编辑框的数组适配器
             sac_key.setAdapter(adapter);
             // 给自动完成编辑框设置列表项的点击监听器
-            sac_key.setOnItemClickListener(new OnItemClickListener() {
+            sac_key.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 // 一旦点击关键词匹配列表中的某一项，就触发点击监听器的onItemClick方法
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     sac_key.setText(((TextView) view).getText());
@@ -133,7 +171,6 @@ public class SearchViewActivity extends AppCompatActivity {
         if (id == android.R.id.home) { // 点击了工具栏左边的返回箭头
             finish();
         } else if (id == R.id.menu_refresh) { // 点击了刷新图标
-            tv_desc.setText("当前刷新时间: " + DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
             return true;
         } else if (id == R.id.menu_about) { // 点击了关于菜单项
             Toast.makeText(this, "这个是工具栏的演示demo", Toast.LENGTH_LONG).show();

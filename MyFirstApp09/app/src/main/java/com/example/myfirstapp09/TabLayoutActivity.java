@@ -1,4 +1,4 @@
-package com.example.tenthapplication;
+package com.example.myfirstapp09;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.tenthapplication.adapter.GoodsPagerAdapter;
-import com.example.tenthapplication.util.DateUtil;
-import com.example.tenthapplication.util.MenuUtil;
+import com.example.myfirstapp09.adapter.GoodsPagerAdapter;
+import com.example.myfirstapp09.util.DateUtil;
+import com.example.myfirstapp09.util.MenuUtil;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener;
 import com.google.android.material.tabs.TabLayout.Tab;

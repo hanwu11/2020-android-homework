@@ -1,4 +1,4 @@
-package com.example.tenthapplication;
+package com.example.myfirstapp09;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import android.widget.TextView;
 
-import com.example.tenthapplication.R;
+import com.example.myfirstapp09.R;
 
 public class TabThirdActivity extends AppCompatActivity {
 

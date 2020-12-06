@@ -1,4 +1,4 @@
-package com.example.tenthapplication.widget;
+package com.example.myfirstapp09.widget;
 
 import android.content.Context;
 import android.os.Handler;
@@ -15,8 +15,8 @@ import android.widget.RelativeLayout;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.tenthapplication.R;
-import com.example.tenthapplication.util.Utils;
+import com.example.myfirstapp09.R;
+import com.example.myfirstapp09.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
